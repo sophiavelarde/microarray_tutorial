@@ -22,14 +22,14 @@ isLog2Transformed <- function(data) {
 # First obtain metadata
 id <- "GSE19080" # GPL4133
 
-# creating a temp folder
+# creating a temp folder, crear el folder primero para salga already
 if (!dir.exists(paste0(".temp/", id))) {
     dir.create(paste0(".temp/", id))
 } else {
     message("Folder already exists!")
 }
 
-# Obtaining Metadata
+# Obtaining Metadata si se pone exprs se ve los valore y fData todos los genes
 meta <- getGEO(id, GSEMatrix = TRUE, destdir = ".temp")
 meta <- meta[[1]]
 
